@@ -1,1 +1,205 @@
-{}
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.files.associations": {
+    ".env.local.example": "tune",
+    ".env.example": "tune",
+    "*.e2e-spec.ts": "test-ts",
+    "*.int-spec.ts": "test-ts"
+  },
+  "jestrunner.codeLensSelector": "**/*.{test,spec,int-spec,e2e-spec}.{js,jsx,ts,tsx}",
+  "editor.suggestSelection": "first",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 24,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  // Set the default
+  "editor.formatOnSave": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.ignoreMissingGitWarning": true,
+  "explorer.confirmDragAndDrop": false,
+  "eslint.format.enable": true,
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "cSpell.userWords": [
+    "Duble",
+    "firsttris",
+    "ispec",
+    "NOSONAR",
+    "seedwork",
+    "tsbuildinfo"
+  ],
+  "settingsSync.ignoredExtensions": [],
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "remote.containers.defaultExtensions": [
+    "shan.code-settings-sync",
+    "streetsidesoftware.code-spell-checker",
+    "wwm.better-align",
+    "wix.vscode-import-cost",
+    "xyz.local-history",
+    "mikestead.dotenv",
+    "oderwat.indent-rainbow",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "sonarsource.sonarlint-vscode",
+    "johnpapa.vscode-peacock",
+    "vivaxy.vscode-conventional-commits",
+    "ms-vscode.vscode-typescript-next",
+    "christian-kohler.path-intellisense",
+    "redhat.vscode-yaml",
+    "visualstudioexptteam.vscodeintellicode",
+    "christian-kohler.npm-intellisense",
+    "ms-azuretools.vscode-docker",
+    "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+    "humao.rest-client"
+  ],
+  "terminal.integrated.copyOnSelection": true,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular",
+      "value": "#a6120d"
+    },
+    {
+      "name": "Angular Red",
+      "value": "#dd0531"
+    },
+    {
+      "name": "Apache Kafka",
+      "value": "#000000"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "Django",
+      "value": "#0C4B33"
+    },
+    {
+      "name": "Golang",
+      "value": "#007d9c"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Keycloak",
+      "value": "#39a5dc"
+    },
+    {
+      "name": "Kubernetes",
+      "value": "#436ee3"
+    },
+    {
+      "name": "Laravel",
+      "value": "#fb503b"
+    },
+    {
+      "name": "Loopback",
+      "value": "#3f5dff"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Nest.js",
+      "value": "#e0234e"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "Python",
+      "value": "#25415d"
+    },
+    {
+      "name": "React Blue",
+      "value": "#61dafb"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Svelte Orange",
+      "value": "#ff3d00"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    },
+    {
+      "name": "RabbitMQ",
+      "value": "#f60"
+    },
+    {
+      "name": "TypeScript",
+      "value": "#007acc"
+    }
+  ],
+  "workbench.colorTheme": "Dracula",
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "editor.inlayHints.padding": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "redhat.telemetry.enabled": true,
+  "conventionalCommits.lineBreak": "\\n",
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "vs-kubernetes": {
+    "vscode-kubernetes.kubectl-path.linux": "/home/user/.local/state/vs-kubernetes/tools/kubectl/kubectl",
+    "vscode-kubernetes.minikube-path.linux": "/home/user/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vscode-kubernetes.helm-path.linux": "/home/user/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open"
+  // "files.autoSave": "afterDelay"
+}

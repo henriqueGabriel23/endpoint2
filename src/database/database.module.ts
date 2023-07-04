@@ -8,15 +8,14 @@ import User from 'src/user/entities/user.entity';
   imports: [
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      inject: [ConfigService],
-      useFactory: (configService: ConfigService) => ({
+      // inject: [ConfigService],
+      useFactory: () => ({
         type: 'mysql',
-        // logger: new DatabaseLogger(),
-        host: configService.get('DATABASE_HOST'),
-        port: configService.get('DATABASE_PORT'),
-        username: configService.get('DATABASE_USER'),
-        password: configService.get('MYSQL_ROOT_PASSWORD'),
-        database: configService.get('MYSQL_DATABASE'),
+        host: 'localhost',
+        port: 3306,
+        username: 'root',
+        password: 'root',
+        database: 'nissan',
         entities: [User],
         synchronize: true,
         autoLoadEntities: true,

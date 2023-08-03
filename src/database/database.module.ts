@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 // import DatabaseLogger from './databaseLogger';
 import User from 'src/user/entities/user.entity';
+import Natura from 'src/natura/entities/natura.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import User from 'src/user/entities/user.entity';
         username: 'root',
         password: 'root',
         database: 'nissan',
-        entities: [User],
+        entities: [User, Natura],
         synchronize: true,
         autoLoadEntities: true,
       }),

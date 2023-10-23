@@ -1,37 +1,33 @@
-import {
-  Entity,
-  Column,
-  PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-  BaseEntity,
-} from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from 'typeorm';
 
 @Entity()
 class Natura extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column() // Defina o valor padrão como uma string vazia
+  @Column()
   serviceChannel: string;
 
-  @Column() // Defina o valor padrão como uma string vazia
+  @Column()
   key: string;
 
-  @Column() // Defina o valor padrão como uma string vazia
+  @Column()
   assignee: string;
 
-  @Column() // Defina o valor padrão como uma string vazia
+  @Column()
   created: string;
 
-  @Column() // Defina o valor padrão como uma string vazia
+  @Column()
   updated: string;
 
-  @Column({ nullable: true }) // Defina o valor padrão como uma string vazia
+  @Column({ nullable: true })
   resolutiondate: string;
 
-  @Column() // Defina o valor padrão como uma string vazia
+  @Column()
   issuetype: string;
+
+  @Column({ nullable: true })
+  summary: string;
 }
 
 export default Natura;

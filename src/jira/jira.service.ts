@@ -3,7 +3,7 @@ import { HttpService } from '@nestjs/axios';
 import { Observable } from 'rxjs';
 import { AxiosResponse } from 'axios';
 import { JiraIssueDto } from './dto/jira-issue.dto';
-import { log } from 'console';
+import { format } from 'date-fns';
 
 @Injectable()
 export class JiraService {
@@ -33,6 +33,7 @@ export class JiraService {
       const data: JiraIssueDto[] = axiosResponse.data.issues.map(
         (issue: {
           fields: {
+            customfield_18448: any;
             customfield_18425: { [x: string]: any };
             assignee: { displayName: any };
             created: any;
@@ -45,10 +46,20 @@ export class JiraService {
           serviceChannel: issue.fields.customfield_18425.value,
           key: issue.key,
           assignee: issue.fields.assignee.displayName,
-          created: issue.fields.created,
-          updated: issue.fields.updated,
-          resolutiondate: issue.fields.resolutiondate,
+          created: format(
+            new Date(issue.fields.created),
+            'yyyy-MM-dd HH:mm:ss',
+          ),
+          updated: format(
+            new Date(issue.fields.updated),
+            'yyyy-MM-dd HH:mm:ss',
+          ),
+          resolutiondate: format(
+            new Date(issue.fields.resolutiondate),
+            'yyyy-MM-dd HH:mm:ss',
+          ),
           issuetype: issue.fields.issuetype.name,
+          summary: issue.fields.customfield_18448,
         }),
       );
       return data;

@@ -7,4 +7,5 @@ export class JiraIssueDto {
   updated: string;
   resolutiondate: string;
   issuetype: string;
+  summary: string;
 }

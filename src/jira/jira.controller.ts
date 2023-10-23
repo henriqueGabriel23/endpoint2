@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { JiraService } from './jira.service';
 import { JiraIssueDto } from './dto/jira-issue.dto';
 
@@ -9,11 +9,12 @@ export class JiraController {
   @Get('issues')
   async getIssues(): Promise<JiraIssueDto[]> {
     const jqlQuery = encodeURIComponent(
-      'project = "Avon 2022 Outsourcing" AND "Canal de Atendimento" in ("Consultoria de Beleza Oficial","Líderes de Negócios","Novidades da Semana",TikTok,Youtube)',
+      'project = "Avon 2022 Outsourcing" AND "Canal de Atendimento" in ("Consultoria de Beleza Oficial","Líderes de Negócios","Novidades da Semana",TikTok,Youtube) AND resolutiondate is not EMPTY',
     );
 
     try {
       const data = await this.jiraService.getIssues(jqlQuery);
+
       return data;
     } catch (error) {
       console.log(error);

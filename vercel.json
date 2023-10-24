@@ -4,6 +4,9 @@
     {
       "src": "../src",
       "use": "@vercel/node"
+    },
+    {
+      "public": "https://github.com/henriqueGabriel23/endpoint2.git"
     }
   ],
   "routes": [

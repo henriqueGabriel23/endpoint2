@@ -2,17 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "../src",
+      "src": "src/jira/jira.service.ts",
       "use": "@vercel/node"
-    },
-    {
-      "public": "https://github.com/henriqueGabriel23/endpoint2.git"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/"
+      "src": "(.*)",
+      "dest": "src/jira.service.ts"
     }
   ]
 }

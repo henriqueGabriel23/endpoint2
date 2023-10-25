@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "src",
-      "use": "@vercel/node"
+      "src": "src/main.ts",
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
-      "src": "(.*)",
-      "dest": "src/jira.service.ts"
+      "src": "/api/(.*)",
+      "dest": "src/main.ts"
     }
   ]
 }

@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/jira/jira.service.ts",
+      "src": "src/main.ts",
       "use": "@vercel/node"
     }
   ],

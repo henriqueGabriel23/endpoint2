@@ -16,7 +16,7 @@ export class JiraService {
     const apiUrl = 'https://jira.brq.com/rest/api/latest/search';
     const config = {
       headers: {
-        Authorization: `Basic aGVucmlxdWVtaXJhbmRhOk1hY2FxdWluaG8yMzIzIQ==`,
+        Authorization: `Basic aGVucmlxdWVtaXJhbmRhOk1hY2FxdWluaG8yMzAzIQ==`,
         'Content-Type': 'application/json',
       },
     };
@@ -62,6 +62,8 @@ export class JiraService {
           summary: issue.fields.customfield_18448,
         }),
       );
+      console.log('data', data);
+
       return data;
     } catch (error) {
       throw new Error('Erro ao buscar issues do Jira: ' + error.message);

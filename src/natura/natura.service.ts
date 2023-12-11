@@ -14,17 +14,22 @@ export class NaturaService {
   private natura: any[] = [];
 
   async createNaturaAndSaveJiraData(body: any, jqlQuery: string): Promise<any> {
+    console.log('jqlQuerytest', jqlQuery);
+
     try {
       // Chama o serviço do Jira com a consulta JQL e obtém os dados
       const resultJira: JiraIssueDto[] = await this.jiraService.getIssues(
         jqlQuery,
       );
+      console.log('resultJira', resultJira);
 
       // Salva os dados da API do Jira no banco de dados
       for (const jiraItem of resultJira) {
         await this.saveJiraDataToDatabase(jiraItem);
       }
     } catch (error) {
+      console.log(error);
+
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
     }
   }
@@ -46,7 +51,7 @@ export class NaturaService {
           issuetype: jiraItem.issuetype,
           summary: jiraItem.summary,
         };
-
+        console.log('jira', jiraItem);
         const result = this.naturaRepository.create(issue);
         await this.naturaRepository.save(result);
       }
@@ -55,6 +60,14 @@ export class NaturaService {
         'Erro ao salvar dados do Jira no banco de dados.',
         HttpStatus.INTERNAL_SERVER_ERROR,
       );
+    }
+  }
+  async getTest() {
+    try {
+      const result = await this.naturaRepository.find();
+      return result;
+    } catch (error) {
+      throw new Error('Erro ao buscar issues do Jira: ' + error.message);
     }
   }
 }

@@ -1,24 +1,10 @@
 version: '3.5'
 services:
-  # api:
-  #     build:
-  #         dockerfile: Dockerfile
-  #         context: .
-  #     depends_on:
-  #         - database
-  #     environment:
-  #         # DATABASE_URL: postgres://user:password@postgres:5432/db
-  #         DATABASE_HOST: database
-  #         DATABASE_USER: root
-  #         MYSQL_ROOT_PASSWORD: root
-  #         MYSQL_DATABASE: nest
-  #         NODE_ENV: development
-  #         PORT: 3000
-  #     ports:
-  #         - "3000:3000"
-
   database:
-    image: mysql:latest
+    image: mysql:5.7
+    container_name: meu-banco
+    networks:
+      - minha-rede
     restart: always
     ports:
       - 3306:3306
@@ -26,11 +12,34 @@ services:
       - .env
     volumes:
       - ~/database/nest:/var/lib/mysql
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    networks:
+      - minha-rede
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    depends_on:
+      - database
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - C:/Users/henriquemiranda/Downloads/grafana-enterprise-9.5.1.windows-amd64/grafana-9.5.1/conf/defaults.ini:/etc/grafana/grafana.ini
 
-  # mailhog:
-  #     image: mailhog/mailhog
-  #     logging:
-  #         driver: 'none'  # disable saving logs
-  #     ports:
-  #     - 1025:1025 # smtp server
-  #     - 8025:8025 # web ui
+  app:
+    build: .
+    container_name: app
+    networks:
+      - minha-rede
+    ports:
+      - '3002:3002'
+    depends_on:
+      - database
+
+networks:
+  minha-rede:
+    driver: bridge
+
+volumes:
+  grafana_data:

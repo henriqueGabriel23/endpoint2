@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Query, HttpCode } from '@nestjs/common';
+import { Controller, Post, Body, Query, HttpCode, Get } from '@nestjs/common';
 import { NaturaService } from './natura.service';
 
 @Controller('natura')
@@ -9,5 +9,10 @@ export class NaturaController {
   @Post()
   createAtendimento(@Body() body: any, @Query('jqlQuery') jqlQuery: string) {
     return this.NaturaService.createNaturaAndSaveJiraData(body, jqlQuery);
+  }
+  @Get('test')
+  async getTest() {
+    console.log('entrou');
+    return this.NaturaService.getTest();
   }
 }
